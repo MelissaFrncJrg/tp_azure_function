@@ -91,13 +91,10 @@ Réponse attendue : `Message published in queue.`
 Dans les logs de `func start`, on doit voir l'enchaînement automatique — d'abord la fonction HTTP, puis la fonction Queue qui se déclenche toute seule juste après :
 
 ```
-Executing 'Functions.HttpTrigger' (Reason='This function was programmatically called via the host APIs.', ...)
-Message received: Hello there
-Executed 'Functions.HttpTrigger' (Succeeded, ...)
-
-Executing 'Functions.QueueToTable' (Reason='New queue message detected on 'outqueue'.', ...)
-Message received from queue : Hello there
-Executed 'Functions.QueueToTable' (Succeeded, ...)
+[2026-09-10T10:10:48.177Z] Worker process started and initialized.
+[2026-09-10T10:10:51.686Z] Executing 'Functions.HttpTrigger' (Reason='This function was programmatically called via the host APIs.', Id=e3ce441e-8123-468c-89a5-e044c2be9ec9)
+[2026-09-10T10:10:51.717Z] Message received: Hello there
+[2026-09-10T10:10:51.846Z] Executed 'Functions.HttpTrigger' (Succeeded, Id=e3ce441e-8123-468c-89a5-e044c2be9ec9, Duration=160ms)
 ```
 
 ### 5. Vérifier les données (optionnel)
